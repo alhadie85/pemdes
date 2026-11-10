@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA — HADI LATIF.MY.ID PEMERINTAHAN DESA KARANGGAN</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-yellow': '#FDE047',
+                        'deep-onyx': '#0A0A0A',
+                        'surface-charcoal': '#171717',
+                        'void-gray': '#262626',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(1deg)' },
+                        },
+                        'float-reverse': {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(10px) rotate(-1.5deg)' },
+                        },
+                        ticker: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05)' }
+                        }
+                    },
+                    animation: {
+                        float: 'float 6s ease-in-out infinite',
+                        'float-slow': 'float 9s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 7s ease-in-out infinite',
+                        ticker: 'ticker 25s linear infinite',
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* HADI LATIF MY.ID */
+        body {
+            background-color: #0A0A0A;
+            font-family: 'Inter', sans-serif;
+            color: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphic Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .glass-dark {
+            background: rgba(10, 10, 10, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-card-yellow {
+            background: rgba(253, 224, 71, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(253, 224, 71, 0.3);
+        }
+
+        /* Card 3D Tilt Effect Container */
+        .card-perspective {
+            perspective: 1000px;
+        }
+
+        .interactive-card {
+            transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
+            transform-style: preserve-3d;
+        }
+
+        /* Hide scrollbars for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Custom Wave Cutouts */
+        .liquid-hero-cut {
+            border-bottom-right-radius: 100px;
+            border-bottom-left-radius: 40px;
+        }
+        @media (min-width: 768px) {
+            .liquid-hero-cut {
+                border-bottom-right-radius: 180px;
+                border-bottom-left-radius: 60px;
+            }
+        }
+
+        .liquid-section-cut {
+            border-top-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+        }
+        @media (min-width: 768px) {
+            .liquid-section-cut {
+                border-top-left-radius: 140px;
+                border-bottom-right-radius: 140px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-cyber-yellow">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto">
+            <nav class="flex items-center justify-between bg-black/10 backdrop-blur-xl border border-black/10 md:border-white/20 rounded-full px-5 py-3 shadow-lg">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-black text-cyber-yellow flex items-center justify-center font-black text-xl tracking-tighter group-hover:scale-105 transition-transform">
+                        A
+                    </div>
+                    <span class="font-black text-2xl tracking-tight text-black md:group-hover:text-black">AURA</span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-black/80">
+                    <a href="#playground" class="hover:text-black transition-colors">Playground</a>
+                    <a href="#features" class="hover:text-black transition-colors">Yield & FX</a>
+                    <a href="#security" class="hover:text-black transition-colors">Security</a>
+                    <a href="#testimonials" class="hover:text-black transition-colors">Reviews</a>
+                </div>
+
+                <!-- Right Action Status Badge & Button -->
+                <div class="flex items-center gap-3">
+                    <div class="hidden sm:flex items-center gap-2 bg-black/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-black/10 text-[10px] font-bold uppercase tracking-wider text-black">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Engine V2.4 Active
+                    </div>
+                    
+                    <button onclick="openModal('launchModal')" class="bg-black hover:bg-surface-charcoal text-white font-semibold text-xs md:text-sm px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-md flex items-center gap-2">
+                        <span>Launch App</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-cyber-yellow"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="w-full">
+
+        <!-- HERO SECTION: CYBER YELLOW SHOUT AREA -->
+        <section class="relative bg-cyber-yellow text-black pt-28 md:pt-36 pb-20 md:pb-32 px-4 md:px-8 liquid-hero-cut shadow-2xl z-10 transition-all duration-500">
+            <!-- Background Subtle Liquid Pattern -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+                <div class="absolute -top-40 -left-40 w-96 h-96 bg-black rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-amber-400 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto">
+                
+                <!-- High-Vis Trust Badge -->
+                <div class="inline-flex items-center gap-2 bg-black text-cyber-yellow px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-xl animate-bounce">
+                    <i data-lucide="award" class="w-4 h-4 text-cyber-yellow"></i>
+                    <span>#1 Digital Banking Protocol 2026</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Left Column: Massive Minimalist Typography -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <h1 class="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter leading-[0.92] uppercase">
+                            HADI LATIF <br>
+                            <span class="text-transparent" style="-webkit-text-stroke: 2.5px #0A0A0A;">PEMERINTAHAN DESA KARANGGAN &</span><br>
+                            YU BERGABUNG.
+                        </h1>
+
+                        <p class="text-base sm:text-lg font-medium text-black/80 max-w-xl leading-relaxed">
+                            Pemerintahan desa karanggan jalan kantor desa karanggan karanggan muda dan karanggan tua dan BTN.
+                        </p>
+
+                        <!-- Call To Actions -->
+                        <div class="flex flex-wrap items-center gap-4 pt-4">
+                            <button onclick="openModal('launchModal')" class="bg-black text-white hover:bg-surface-charcoal px-8 py-4 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:scale-105 active:scale-95 shadow-2xl flex items-center gap-3 group">
+                                <span>Get Early Access</span>
+                                <div class="w-6 h-6 rounded-full bg-cyber-yellow text-black flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                </div>
+                            </button>
+
+                            <a href="#playground" class="border-2 border-black/20 hover:border-black text-black px-7 py-4 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:scale-105 active:scale-95 backdrop-blur-sm flex items-center gap-2">
+                                <i data-lucide="play-circle" class="w-4 h-4"></i>
+                                <span>Try Simulator</span>
+                            </a>
+                        </div>
+
+                        <!-- Live Metrics Bar -->
+                        <div class="pt-8 border-t border-black/15 grid grid-cols-3 gap-4 max-w-lg">
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-black tracking-tight">$4.8B+</div>
+                                <div class="text-[10px] font-bold uppercase tracking-widest text-black/70">Volume Settled</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-black tracking-tight">0.002s</div>
+                                <div class="text-[10px] font-bold uppercase tracking-widest text-black/70">Avg Latency</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-black tracking-tight">4.85%</div>
+                                <div class="text-[10px] font-bold uppercase tracking-widest text-black/70">Yield APY</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Glassmorphic Debit Card -->
+                    <div class="lg:col-span-5 flex justify-center lg:justify-end card-perspective">
+                        <div id="heroCard" class="interactive-card glass-dark w-full max-w-sm sm:max-w-md rounded-[36px] p-6 sm:p-8 text-white relative shadow-2xl border border-white/20 backdrop-blur-2xl animate-float">
+                            
+                            <!-- Card Header -->
+                            <div class="flex justify-between items-start mb-8">
+                                <div>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-white/60 block">AURA Black Reserve</span>
+                                    <h3 class="text-lg font-bold tracking-wider">PREMIER LIQUID</h3>
+                                </div>
+                                <div class="bg-cyber-yellow text-black text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-lg">
+                                    PHYSICAL + VIRTUAL
+                                </div>
+                            </div>
+
+                            <!-- Card Chip & NFC -->
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="w-12 h-9 rounded-lg bg-gradient-to-tr from-yellow-500 via-amber-300 to-yellow-100 border border-amber-200/50 flex items-center justify-center shadow-inner">
+                                    <div class="w-8 h-6 border border-black/30 rounded flex items-center justify-center">
+                                        <div class="w-4 h-3 border-r border-b border-black/30"></div>
+                                    </div>
+                                </div>
+                                <i data-lucide="wifi" class="w-6 h-6 text-white/50 rotate-90"></i>
+                            </div>
+
+                            <!-- Balance Display -->
+                            <div class="space-y-1 mb-8">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] uppercase tracking-widest text-white/60 font-semibold">Available Liquid Balance</span>
+                                    <button id="toggleBalanceBtn" class="text-xs text-cyber-yellow hover:underline flex items-center gap-1">
+                                        <i data-lucide="eye" class="w-3.5 h-3.5" id="eyeIcon"></i>
+                                        <span id="toggleText">Hide</span>
+                                    </button>
+                                </div>
+                                <div class="text-3xl sm:text-4xl font-black tracking-tight text-white flex items-center gap-1">
+                                    <span id="cardBalance">$128,450.90</span>
+                                </div>
+                            </div>
+
+                            <!-- Card Number & Details -->
+                            <div class="flex justify-between items-end pt-4 border-t border-white/10 text-xs tracking-widest font-mono text-white/80">
+                                <div>
+                                    <div class="text-[9px] uppercase tracking-widest text-white/50 font-sans mb-1">Card Holder</div>
+                                    <div class="font-bold text-white font-sans uppercase">AEX-9920-VALUED</div>
+                                </div>
+                                <div>
+                                    <div class="text-[9px] uppercase tracking-widest text-white/50 font-sans mb-1">Expires</div>
+                                    <div class="font-bold text-white font-sans">09/29</div>
+                                </div>
+                                <div>
+                                    <!-- Mastercard/Visa style circles -->
+                                    <div class="flex -space-x-2">
+                                        <div class="w-6 h-6 rounded-full bg-cyber-yellow/80"></div>
+                                        <div class="w-6 h-6 rounded-full bg-white/40 backdrop-blur-sm"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Action Buttons on Glass Card -->
+                            <div class="mt-6 pt-4 border-t border-white/10 flex gap-2">
+                                <button onclick="quickAction('Money Sent Successfully!')" class="flex-1 bg-cyber-yellow hover:bg-yellow-300 text-black py-2.5 rounded-full font-bold text-xs transition-all active:scale-95 flex items-center justify-center gap-1.5 shadow-lg">
+                                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                    <span>Send</span>
+                                </button>
+                                <button onclick="quickAction('Top Up Request Generated!')" class="flex-1 bg-white/10 hover:bg-white/20 text-white border border-white/20 py-2.5 rounded-full font-bold text-xs transition-all active:scale-95 flex items-center justify-center gap-1.5">
+                                    <i data-lucide="plus" class="w-3.5 h-3.5 text-cyber-yellow"></i>
+                                    <span>Top Up</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- THE DARK VOID: PARTNER TICKER SECTION -->
+        <section class="bg-deep-onyx py-12 md:py-16 border-b border-void-gray/40 overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 mb-6">
+                <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40 text-center">Integrated with Enterprise Liquidity & Institutional Clearing</p>
+            </div>
+
+            <!-- Monochromatic Partner Logo Ticker -->
+            <div class="flex overflow-hidden relative w-full select-none">
+                <div class="flex gap-12 md:gap-20 items-center animate-ticker whitespace-nowrap py-2">
+                    <!-- Set 1 -->
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="layers" class="w-6 h-6"></i> STRIPE
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="database" class="w-6 h-6"></i> SNOWFLAKE
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i> TABLEAU
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="credit-card" class="w-6 h-6"></i> VISA
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="box" class="w-6 h-6"></i> DBT
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="triangle" class="w-6 h-6"></i> VERCEL
+                    </div>
+
+                    <!-- Set 2 (Duplicate for Seamless Loop) -->
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="layers" class="w-6 h-6"></i> STRIPE
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="database" class="w-6 h-6"></i> SNOWFLAKE
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i> TABLEAU
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="credit-card" class="w-6 h-6"></i> VISA
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="box" class="w-6 h-6"></i> DBT
+                    </div>
+                    <div class="flex items-center gap-2 font-black text-2xl tracking-tighter text-white/50 hover:text-cyber-yellow transition-colors cursor-pointer">
+                        <i data-lucide="triangle" class="w-6 h-6"></i> VERCEL
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE FINANCIAL PLAYGROUND SECTION -->
+        <section id="playground" class="bg-deep-onyx py-24 px-4 md:px-8 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-cyber-yellow text-xs font-bold uppercase tracking-widest mb-3">
+                            <span class="w-2 h-2 rounded-full bg-cyber-yellow"></span>
+                            Interactive Dashboard Simulator
+                        </div>
+                        <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white">THE LIQUID PLAYGROUND</h2>
+                    </div>
+                    <p class="text-sm text-white/60 max-w-md leading-relaxed">
+                        Simulate real-time multi-currency swaps, customize card security skins, and inspect live spending liquid analytics without signing up.
+                    </p>
+                </div>
+
+                <!-- Playground Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Left: Real-time FX Instant Swap Simulator -->
+                    <div class="lg:col-span-5 glass-panel rounded-[36px] p-6 sm:p-8 flex flex-col justify-between border border-white/10 relative overflow-hidden">
+                        <div class="absolute -top-24 -right-24 w-48 h-48 bg-cyber-yellow/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                                    <i data-lucide="repeat" class="w-5 h-5 text-cyber-yellow"></i>
+                                    Instant Borderless FX
+                                </h3>
+                                <span class="text-[10px] font-mono bg-cyber-yellow/20 text-cyber-yellow px-2.5 py-1 rounded-full border border-cyber-yellow/30">
+                                    ZERO SPREAD
+                                </span>
+                            </div>
+
+                            <!-- Send Input -->
+                            <div class="bg-black/50 border border-white/10 rounded-2xl p-4 mb-3 hover:border-cyber-yellow/40 transition-colors">
+                                <div class="flex justify-between text-xs text-white/50 mb-1">
+                                    <span>You Send</span>
+                                    <span>Balance: $50,000.00</span>
+                                </div>
+                                <div class="flex items-center justify-between gap-4">
+                                    <input type="number" id="fxAmount" value="2500" oninput="calculateFx()" class="bg-transparent text-2xl font-black text-white focus:outline-none w-full">
+                                    <select id="fxFromCurrency" onchange="calculateFx()" class="bg-void-gray text-white text-xs font-bold px-3 py-2 rounded-xl border border-white/10 focus:outline-none cursor-pointer">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Swap Divider Button -->
+                            <div class="flex justify-center -my-2 relative z-10">
+                                <button onclick="swapCurrencies()" class="bg-cyber-yellow text-black p-2.5 rounded-full hover:scale-110 active:scale-95 transition-all shadow-lg">
+                                    <i data-lucide="arrow-down-up" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+
+                            <!-- Receive Output -->
+                            <div class="bg-black/50 border border-white/10 rounded-2xl p-4 mt-3 hover:border-cyber-yellow/40 transition-colors">
+                                <div class="flex justify-between text-xs text-white/50 mb-1">
+                                    <span>You Receive (Estimated)</span>
+                                    <span id="fxRateDisplay">Rate: 1 USD = 0.92 EUR</span>
+                                </div>
+                                <div class="flex items-center justify-between gap-4">
+                                    <div id="fxResult" class="text-2xl font-black text-cyber-yellow">2,300.00</div>
+                                    <select id="fxToCurrency" onchange="calculateFx()" class="bg-void-gray text-white text-xs font-bold px-3 py-2 rounded-xl border border-white/10 focus:outline-none cursor-pointer">
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="USD">USD ($)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                        <option value="JPY">JPY (¥)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instant Transfer Trigger -->
+                        <div class="mt-8">
+                            <button onclick="executeSwap()" class="w-full bg-cyber-yellow hover:bg-yellow-300 text-black font-bold py-4 rounded-full transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-2 shadow-xl">
+                                <span>Execute Atomic Swap</span>
+                                <i data-lucide="zap" class="w-4 h-4"></i>
+                            </button>
+                            <p class="text-[10px] text-center text-white/40 mt-3 font-mono">Guaranteed by AURA Settlement Layer • 0.002s Execution</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Spending Liquid Chart & Card Theme Switcher -->
+                    <div class="lg:col-span-7 space-y-8">
+                        
+                        <!-- Card Theme Customizer Widget -->
+                        <div class="glass-panel rounded-[36px] p-6 sm:p-8 border border-white/10">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Dynamic Card Skin Configurator</h3>
+                                    <p class="text-xs text-white/60">Customize physical NFC card finish in real-time</p>
+                                </div>
+                                
+                                <!-- Skin Selection Buttons -->
+                                <div class="flex items-center gap-2 bg-black/40 p-1.5 rounded-full border border-white/10">
+                                    <button onclick="changeSkin('dark')" class="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-void-gray hover:text-cyber-yellow transition-all skin-btn active-skin" id="skinDark">
+                                        Onyx Void
+                                    </button>
+                                    <button onclick="changeSkin('cyber')" class="px-3 py-1.5 rounded-full text-xs font-bold text-white/70 hover:text-white transition-all skin-btn" id="skinCyber">
+                                        Cyber Gold
+                                    </button>
+                                    <button onclick="changeSkin('holo')" class="px-3 py-1.5 rounded-full text-xs font-bold text-white/70 hover:text-white transition-all skin-btn" id="skinHolo">
+                                        Holo Glass
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Mini Interactive Card Preview -->
+                            <div id="previewCardSkin" class="h-44 sm:h-48 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 bg-surface-charcoal border border-white/20 relative overflow-hidden">
+                                <div class="flex justify-between items-start">
+                                    <div class="text-xs font-black tracking-widest uppercase text-cyber-yellow">AURA // <span id="skinTitle">ONYX VOID EDITION</span></div>
+                                    <button id="freezeToggle" onclick="toggleFreeze()" class="bg-black/60 hover:bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full border border-white/20 transition-all flex items-center gap-1">
+                                        <i data-lucide="lock" class="w-3 h-3 text-cyber-yellow"></i>
+                                        <span id="freezeStatusText">Status: Active</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="flex justify-between items-end">
+                                    <div class="font-mono text-sm tracking-widest text-white/80">•••• •••• •••• 8819</div>
+                                    <div class="text-xs font-bold text-cyber-yellow">EXP 12/28</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Liquid Spending Chart -->
+                        <div class="glass-panel rounded-[36px] p-6 sm:p-8 border border-white/10">
+                            <div class="flex items-center justify-between mb-6">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Liquid Yield & Allocation</h3>
+                                    <p class="text-xs text-white/60">Automated yield auto-compounding visualization</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-2xl font-black text-cyber-yellow">+$1,420.80</span>
+                                    <span class="text-[10px] text-green-400 block font-bold">+18.4% This Month</span>
+                                </div>
+                            </div>
+
+                            <!-- Custom Bars Chart -->
+                            <div class="space-y-3">
+                                <!-- Bar 1 -->
+                                <div class="group cursor-pointer">
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-white/80 flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-cyber-yellow"></span>
+                                            High-Yield Vault Vault (4.85% APY)
+                                        </span>
+                                        <span class="text-cyber-yellow font-bold">$84,200 (65%)</span>
+                                    </div>
+                                    <div class="w-full bg-void-gray h-3 rounded-full overflow-hidden p-0.5 border border-white/5">
+                                        <div class="bg-cyber-yellow h-full rounded-full transition-all duration-1000 group-hover:brightness-125" style="width: 65%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Bar 2 -->
+                                <div class="group cursor-pointer">
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-white/80 flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span>
+                                            Cross-Border Settlement Liquidity
+                                        </span>
+                                        <span class="text-white font-bold">$28,500 (22%)</span>
+                                    </div>
+                                    <div class="w-full bg-void-gray h-3 rounded-full overflow-hidden p-0.5 border border-white/5">
+                                        <div class="bg-blue-400 h-full rounded-full transition-all duration-1000 group-hover:brightness-125" style="width: 22%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Bar 3 -->
+                                <div class="group cursor-pointer">
+                                    <div class="flex justify-between text-xs font-semibold mb-1">
+                                        <span class="text-white/80 flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
+                                            Instant Reserve Buffer
+                                        </span>
+                                        <span class="text-white font-bold">$15,750 (13%)</span>
+                                    </div>
+                                    <div class="w-full bg-void-gray h-3 rounded-full overflow-hidden p-0.5 border border-white/5">
+                                        <div class="bg-purple-400 h-full rounded-full transition-all duration-1000 group-hover:brightness-125" style="width: 13%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CORE VALUE PILLARS (ORGANIC LIQUID CARDS) -->
+        <section id="features" class="bg-cyber-yellow text-black py-24 px-4 md:px-8 liquid-section-cut my-12 relative shadow-2xl">
+            <div class="max-w-7xl mx-auto space-y-16">
+                
+                <!-- Section Title -->
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-black text-cyber-yellow px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                        Architected for Ultra Precision
+                    </div>
+                    <h2 class="text-4xl sm:text-6xl font-black tracking-tighter uppercase">
+                        REDEFINING FINANCIAL HYPER-SPEED
+                    </h2>
+                    <p class="text-base text-black/80 font-medium">
+                        Standard banks lock your capital behind 3-day clearing delays. AURA flows instantly across global corridors.
+                    </p>
+                </div>
+
+                <!-- 3 Large Liquid Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-black text-white rounded-[40px] p-8 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 shadow-2xl border border-black/20 group">
+                        <div class="space-y-6">
+                            <div class="w-14 h-14 rounded-2xl bg-cyber-yellow text-black flex items-center justify-center font-black text-2xl group-hover:rotate-6 transition-transform">
+                                <i data-lucide="trending-up" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold tracking-tight">Frictionless APY Yield</h3>
+                            <p class="text-xs text-white/70 leading-relaxed">
+                                Unused capital automatically routes to top-tier institutional liquidity pools earning up to 4.85% APY compounding continuously by the second.
+                            </p>
+                        </div>
+                        <div class="pt-8 border-t border-white/10 flex items-center justify-between text-cyber-yellow font-bold text-xs uppercase tracking-wider">
+                            <span>Auto-Rebalance Active</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-black text-white rounded-[40px] p-8 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 shadow-2xl border border-black/20 group">
+                        <div class="space-y-6">
+                            <div class="w-14 h-14 rounded-2xl bg-cyber-yellow text-black flex items-center justify-center font-black text-2xl group-hover:rotate-6 transition-transform">
+                                <i data-lucide="globe-2" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold tracking-tight">Sub-MillisecondFX</h3>
+                            <p class="text-xs text-white/70 leading-relaxed">
+                                Hold, send, and settle in 40+ global currencies simultaneously. Complete conversion at mid-market wholesale rate without intermediary markups.
+                            </p>
+                        </div>
+                        <div class="pt-8 border-t border-white/10 flex items-center justify-between text-cyber-yellow font-bold text-xs uppercase tracking-wider">
+                            <span>40+ Currencies Supported</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-black text-white rounded-[40px] p-8 flex flex-col justify-between hover:scale-[1.02] transition-all duration-300 shadow-2xl border border-black/20 group">
+                        <div class="space-y-6">
+                            <div class="w-14 h-14 rounded-2xl bg-cyber-yellow text-black flex items-center justify-center font-black text-2xl group-hover:rotate-6 transition-transform">
+                                <i data-lucide="shield-check" class="w-7 h-7"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold tracking-tight">Quantum Vault Guard</h3>
+                            <p class="text-xs text-white/70 leading-relaxed">
+                                Multi-party computation (MPC) combined with biometric passkey authentication ensures single-point vulnerabilities are mathematically impossible.
+                            </p>
+                        </div>
+                        <div class="pt-8 border-t border-white/10 flex items-center justify-between text-cyber-yellow font-bold text-xs uppercase tracking-wider">
+                            <span>$250M Insured Vault</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECURITY & BIOMETRIC AUTH DEMO SECTION -->
+        <section id="security" class="bg-deep-onyx py-24 px-4 md:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="glass-panel rounded-[40px] p-8 md:p-14 border border-white/15 relative overflow-hidden">
+                    
+                    <!-- Glow Accents -->
+                    <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-cyber-yellow/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="inline-flex items-center gap-2 text-cyber-yellow text-xs font-bold uppercase tracking-widest">
+                                <i data-lucide="fingerprint" class="w-4 h-4"></i> Zero-Knowledge Passkeys
+                            </div>
+                            <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
+                                BIOMETRIC VAULT ENCRYPTION.
+                            </h2>
+                            <p class="text-sm text-white/70 leading-relaxed">
+                                Experience bank-grade biometric authorization. Confirm transactions using native Hardware Enclave passkeys or FaceID without fragile SMS OTP codes.
+                            </p>
+
+                            <div class="space-y-3 pt-2">
+                                <div class="flex items-center gap-3 text-xs font-semibold text-white/90">
+                                    <div class="w-5 h-5 rounded-full bg-cyber-yellow text-black flex items-center justify-center font-bold text-xs">✓</div>
+                                    <span>Hardware Security Module (HSM) Level-3 Enclosure</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-xs font-semibold text-white/90">
+                                    <div class="w-5 h-5 rounded-full bg-cyber-yellow text-black flex items-center justify-center font-bold text-xs">✓</div>
+                                    <span>Instant Dynamic Single-Use Virtual Cards</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-xs font-semibold text-white/90">
+                                    <div class="w-5 h-5 rounded-full bg-cyber-yellow text-black flex items-center justify-center font-bold text-xs">✓</div>
+                                    <span>Automated FDIC Insured Partner Sweeps up to $5,000,000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Passkey Scanner Visual -->
+                        <div class="lg:col-span-6 flex justify-center">
+                            <div class="glass-dark rounded-3xl p-8 w-full max-w-sm border border-white/20 text-center space-y-6 relative">
+                                <div id="scannerRing" class="w-24 h-24 mx-auto rounded-full border-2 border-dashed border-cyber-yellow/60 flex items-center justify-center relative cursor-pointer hover:scale-105 transition-transform" onclick="triggerBiometricScan()">
+                                    <i data-lucide="fingerprint" class="w-12 h-12 text-cyber-yellow"></i>
+                                    <span class="absolute inset-0 rounded-full border border-cyber-yellow animate-ping opacity-25"></span>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <h4 id="bioTitle" class="text-lg font-bold text-white">Tap Fingerprint to Verify</h4>
+                                    <p id="bioStatus" class="text-xs text-white/50 font-mono">Status: Awaiting Touch Signature...</p>
+                                </div>
+
+                                <button onclick="triggerBiometricScan()" class="w-full bg-void-gray hover:bg-white/20 text-white font-bold text-xs py-3 rounded-full border border-white/10 transition-all">
+                                    Simulate Passkey Auth
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS IN FLOATING GLASS BUBBLES -->
+        <section id="testimonials" class="bg-deep-onyx py-24 px-4 md:px-8 border-t border-void-gray/40">
+            <div class="max-w-7xl mx-auto space-y-12">
+                <div class="text-center space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-widest text-cyber-yellow">Loved by Founders & Builders</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight">POWERING HIGH-VELOCITY TEAMS</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="glass-panel p-8 rounded-[36px] border border-white/10 space-y-6 relative animate-float-slow">
+                        <div class="flex items-center gap-1 text-cyber-yellow">
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                        </div>
+                        <p class="text-xs text-white/80 leading-relaxed font-medium">
+                            "AURA completely eliminated our cross-border FX friction. We process $2M+ monthly in payroll across 14 countries without paying traditional wire fees."
+                        </p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <div class="w-10 h-10 rounded-full bg-cyber-yellow text-black font-black flex items-center justify-center text-sm">
+                                EV
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Elena Vance</div>
+                                <div class="text-[10px] text-white/50 uppercase tracking-widest">CTO @ HyperScale Labs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="glass-panel p-8 rounded-[36px] border border-white/10 space-y-6 relative animate-float-reverse">
+                        <div class="flex items-center gap-1 text-cyber-yellow">
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                        </div>
+                        <p class="text-xs text-white/80 leading-relaxed font-medium">
+                            "The liquid yield auto-compound feature is game changing. Idle treasury funds generated over $45,000 in yield last quarter with zero manual management."
+                        </p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <div class="w-10 h-10 rounded-full bg-white text-black font-black flex items-center justify-center text-sm">
+                                MR
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Marcus Reis</div>
+                                <div class="text-[10px] text-white/50 uppercase tracking-widest">Founder @ Apex Digital</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="glass-panel p-8 rounded-[36px] border border-white/10 space-y-6 relative animate-float">
+                        <div class="flex items-center gap-1 text-cyber-yellow">
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-cyber-yellow"></i>
+                        </div>
+                        <p class="text-xs text-white/80 leading-relaxed font-medium">
+                            "The UI density and sleek physical metal card aesthetics make every traditional banking app feel like software built in 2005."
+                        </p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <div class="w-10 h-10 rounded-full bg-cyber-yellow text-black font-black flex items-center justify-center text-sm">
+                                SK
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold text-white">Sophia Chen</div>
+                                <div class="text-[10px] text-white/50 uppercase tracking-widest">Head of Product @ Nexus</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA CALLOUT SECTION (CYBER YELLOW SHOUT) -->
+        <section class="bg-cyber-yellow text-black py-20 px-4 md:px-8 rounded-t-[80px] md:rounded-t-[120px] shadow-2xl relative">
+            <div class="max-w-5xl mx-auto text-center space-y-8">
+                <span class="bg-black text-cyber-yellow px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block">
+                    Instant Onboarding in < 2 Minutes
+                </span>
+
+                <h2 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter uppercase leading-none">
+                    READY TO UNLOCK YOUR LIQUID CAPITAL?
+                </h2>
+
+                <p class="text-base sm:text-lg font-medium text-black/80 max-w-2xl mx-auto">
+                    Join over 120,000+ forward-thinking teams and individuals using AURA for frictionless global banking.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <button onclick="openModal('launchModal')" class="w-full sm:w-auto bg-black text-white hover:bg-surface-charcoal px-10 py-4 rounded-full font-bold text-sm tracking-wide transition-all hover:scale-105 active:scale-95 shadow-2xl">
+                        Open Free Account
+                    </button>
+                    <button onclick="openModal('contactModal')" class="w-full sm:w-auto border-2 border-black/20 hover:border-black text-black px-8 py-4 rounded-full font-bold text-sm tracking-wide transition-all hover:scale-105 active:scale-95">
+                        Talk to Institutional Sales
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER IN THE DARK VOID -->
+    <footer class="bg-deep-onyx text-white py-16 px-4 md:px-8 border-t border-void-gray/40">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 pb-12 border-b border-void-gray/40">
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-cyber-yellow text-black flex items-center justify-center font-black text-lg">A</div>
+                        <span class="font-black text-2xl tracking-tight">AURA</span>
+                    </div>
+                    <p class="text-xs text-white/50 max-w-sm leading-relaxed">
+                        AURA Technologies Inc. is a financial technology company, not a bank. Banking services provided by Evolve Bank & Trust, Member FDIC.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 text-xs font-mono text-cyber-yellow">
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        All Systems Nominal • API Latency 0.002s
+                    </div>
+                </div>
+
+                <!-- Column 1 -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Product</h4>
+                    <ul class="space-y-2.5 text-xs text-white/70">
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">High-Yield Vault</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Global Multi-Currency</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Physical Black Reserve</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Developer APIs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-xs text-white/70">
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">About AURA</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Careers (Hiring)</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Press Kit</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Institutional</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Legal & Security</h4>
+                    <ul class="space-y-2.5 text-xs text-white/70">
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">Bug Bounty</a></li>
+                        <li><a href="#" class="hover:text-cyber-yellow transition-colors">FDIC Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
+                <div>© 2026 AURA PROTOCOL INC. ALL RIGHTS RESERVED.</div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-white transition-colors">TWITTER / X</a>
+                    <a href="#" class="hover:text-white transition-colors">DISCORD</a>
+                    <a href="#" class="hover:text-white transition-colors">GITHUB</a>
+                    <a href="#" class="hover:text-white transition-colors">LINKEDIN</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE MODALS -->
+
+    <!-- Launch App / Waitlist Modal -->
+    <div id="launchModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-dark rounded-[36px] max-w-md w-full p-8 border border-white/20 relative shadow-2xl space-y-6">
+            <button onclick="closeModal('launchModal')" class="absolute top-6 right-6 text-white/60 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="space-y-2">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-cyber-yellow">Exclusive V2.4 Launch</span>
+                <h3 class="text-2xl font-black text-white">Join AURA Reserve</h3>
+                <p class="text-xs text-white/60">Enter your email to receive instant priority onboarding key.</p>
+            </div>
+
+            <form onsubmit="submitForm(event)" class="space-y-4">
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-white/60 block mb-1">Work Email</label>
+                    <input type="email" required placeholder="alex@company.com" class="w-full bg-void-gray border border-white/10 rounded-2xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyber-yellow">
+                </div>
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-white/60 block mb-1">Estimated Monthly Volume</label>
+                    <select class="w-full bg-void-gray border border-white/10 rounded-2xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyber-yellow">
+                        <option>$10,000 - $50,000</option>
+                        <option>$50,000 - $250,000</option>
+                        <option>$250,000 - $1,000,000+</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-cyber-yellow hover:bg-yellow-300 text-black font-bold py-3.5 rounded-full text-xs transition-all active:scale-95 shadow-xl">
+                    Request Early Access Pass
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Sales Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="glass-dark rounded-[36px] max-w-md w-full p-8 border border-white/20 relative shadow-2xl space-y-6">
+            <button onclick="closeModal('contactModal')" class="absolute top-6 right-6 text-white/60 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="space-y-2">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-cyber-yellow">Institutional Desk</span>
+                <h3 class="text-2xl font-black text-white">Talk to Sales</h3>
+                <p class="text-xs text-white/60">Custom liquidity pools and high-volume treasury management solutions.</p>
+            </div>
+
+            <form onsubmit="submitForm(event)" class="space-y-4">
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-white/60 block mb-1">Full Name</label>
+                    <input type="text" required placeholder="Sarah Jenkins" class="w-full bg-void-gray border border-white/10 rounded-2xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyber-yellow">
+                </div>
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-white/60 block mb-1">Company</label>
+                    <input type="text" required placeholder="Apex Treasury Inc" class="w-full bg-void-gray border border-white/10 rounded-2xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyber-yellow">
+                </div>
+                <button type="submit" class="w-full bg-cyber-yellow hover:bg-yellow-300 text-black font-bold py-3.5 rounded-full text-xs transition-all active:scale-95 shadow-xl">
+                    Schedule Institutional Call
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Message Container -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-cyber-yellow text-black px-6 py-3.5 rounded-full font-bold text-xs shadow-2xl transition-all duration-300 transform translate-y-24 opacity-0 flex items-center gap-2">
+        <i data-lucide="check-circle" class="w-4 h-4"></i>
+        <span id="toastMsg">Action executed!</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Interactive 3D Card Tilt Effect on Hover
+        const heroCard = document.getElementById('heroCard');
+        if (heroCard) {
+            heroCard.addEventListener('mousemove', (e) => {
+                const rect = heroCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = ((y - centerY) / centerY) * -12;
+                const rotateY = ((x - centerX) / centerX) * 12;
+                
+                heroCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            heroCard.addEventListener('mouseleave', () => {
+                heroCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            });
+        }
+
+        // 2. Card Balance Toggle Logic
+        let balanceVisible = true;
+        const cardBalance = document.getElementById('cardBalance');
+        const toggleBalanceBtn = document.getElementById('toggleBalanceBtn');
+        const toggleText = document.getElementById('toggleText');
+
+        if (toggleBalanceBtn) {
+            toggleBalanceBtn.addEventListener('click', () => {
+                balanceVisible = !balanceVisible;
+                if (balanceVisible) {
+                    cardBalance.textContent = '$128,450.90';
+                    toggleText.textContent = 'Hide';
+                } else {
+                    cardBalance.textContent = '••••••••••';
+                    toggleText.textContent = 'Show';
+                }
+            });
+        }
+
+        // 3. FX Exchange Rate Simulator Logic
+        const exchangeRates = {
+            USD: { EUR: 0.92, GBP: 0.79, JPY: 154.20, USD: 1.0 },
+            EUR: { USD: 1.08, GBP: 0.85, JPY: 167.50, EUR: 1.0 },
+            GBP: { USD: 1.26, EUR: 1.17, JPY: 195.10, GBP: 1.0 }
+        };
+
+        function calculateFx() {
+            const amountInput = parseFloat(document.getElementById('fxAmount').value) || 0;
+            const fromCurr = document.getElementById('fxFromCurrency').value;
+            const toCurr = document.getElementById('fxToCurrency').value;
+
+            const rate = exchangeRates[fromCurr]?.[toCurr] || 1.0;
+            const converted = (amountInput * rate).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+            document.getElementById('fxResult').textContent = converted;
+            document.getElementById('fxRateDisplay').textContent = `Rate: 1 ${fromCurr} = ${rate} ${toCurr}`;
+        }
+
+        function swapCurrencies() {
+            const fromSelect = document.getElementById('fxFromCurrency');
+            const toSelect = document.getElementById('fxToCurrency');
+            
+            const temp = fromSelect.value;
+            if (exchangeRates[toSelect.value]) {
+                fromSelect.value = toSelect.value;
+                toSelect.value = temp;
+                calculateFx();
+                showToast("Currency pair swapped!");
+            }
+        }
+
+        function executeSwap() {
+            showToast("Swap executed at wholesale zero-spread rate!");
+        }
+
+        // 4. Card Theme Skin Customizer
+        function changeSkin(skin) {
+            const previewCard = document.getElementById('previewCardSkin');
+            const skinTitle = document.getElementById('skinTitle');
+
+            document.querySelectorAll('.skin-btn').forEach(btn => btn.classList.remove('bg-void-gray', 'text-white'));
+
+            if (skin === 'dark') {
+                previewCard.className = 'h-44 sm:h-48 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 bg-surface-charcoal border border-white/20 relative overflow-hidden';
+                skinTitle.textContent = 'ONYX VOID EDITION';
+                document.getElementById('skinDark').classList.add('bg-void-gray', 'text-white');
+            } else if (skin === 'cyber') {
+                previewCard.className = 'h-44 sm:h-48 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 bg-cyber-yellow text-black border border-black/30 relative overflow-hidden';
+                skinTitle.textContent = 'CYBER GOLD EDITION';
+                document.getElementById('skinCyber').classList.add('bg-void-gray', 'text-white');
+            } else if (skin === 'holo') {
+                previewCard.className = 'h-44 sm:h-48 rounded-2xl p-6 flex flex-col justify-between transition-all duration-500 bg-gradient-to-tr from-purple-900/80 via-blue-900/80 to-cyan-800/80 border border-cyan-400/40 text-white relative overflow-hidden';
+                skinTitle.textContent = 'HOLO GLASS EDITION';
+                document.getElementById('skinHolo').classList.add('bg-void-gray', 'text-white');
+            }
+        }
+
+        // Freeze Card Toggle Logic
+        let isFrozen = false;
+        function toggleFreeze() {
+            isFrozen = !isFrozen;
+            const statusText = document.getElementById('freezeStatusText');
+            if (isFrozen) {
+                statusText.textContent = 'Status: Frozen';
+                showToast("Card status locked to Frozen.");
+            } else {
+                statusText.textContent = 'Status: Active';
+                showToast("Card unlocked & ready.");
+            }
+        }
+
+        // 5. Biometric Scan Visual Simulation
+        function triggerBiometricScan() {
+            const bioTitle = document.getElementById('bioTitle');
+            const bioStatus = document.getElementById('bioStatus');
+            const ring = document.getElementById('scannerRing');
+
+            bioTitle.textContent = "Scanning Passkey...";
+            bioStatus.textContent = "Status: Reading Hardware Enclave Key...";
+            ring.classList.add('scale-110');
+
+            setTimeout(() => {
+                bioTitle.textContent = "Biometrics Verified!";
+                bioStatus.textContent = "Status: Signature Validated (0.001s)";
+                ring.classList.remove('scale-110');
+                showToast("Passkey Authorization Successful!");
+            }, 1200);
+        }
+
+        // Quick Action Notification
+        function quickAction(message) {
+            showToast(message);
+        }
+
+        // Modal Utility Functions
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            closeModal('launchModal');
+            closeModal('contactModal');
+            showToast("Request submitted! Key sent to your email.");
+        }
+
+        // Toast Notification System
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = msg;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Initialize default FX calculation on load
+        window.onload = function() {
+            calculateFx();
+        };
+    </script>
+</body>
+</html>
